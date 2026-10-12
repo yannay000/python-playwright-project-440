@@ -13,11 +13,13 @@
 
 ## Установка
 
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
-
 ```bash
 git clone https://github.com/yannay000/python-playwright-project-440.git
 cd python-playwright-project-440
+
+make init
+make install
+make test
 ```
 
 ## Использование
