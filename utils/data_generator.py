@@ -25,6 +25,6 @@ def generate_label_params() -> str:
 def generate_task_params() -> list:
     task_number = randbelow(1000000)
     assignee = "john@google.com"
-    title = f"Title {task_number}"
-    status = "Draft"
+    title = f"Task {task_number}"
+    status = "Published"
     return [assignee, title, status]
