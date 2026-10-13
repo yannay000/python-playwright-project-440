@@ -1,10 +1,22 @@
 # Тестирование канбан-доски с Playwright (Python)
 
 [![hexlet-check](https://github.com/yannay000/python-playwright-project-440/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/yannay000/python-playwright-project-440/actions)
+[![My Pipeline](https://github.com/yannay000/python-playwright-project-440/actions/workflows/my_pipeline.yml/badge.svg?branch=main)](https://github.com/yannay000/python-playwright-project-440/actions/workflows/my_pipeline.yml)
 
-Напишите тесты для проверки работы приложения
 
-Учебный проект Хекслета: https://ru.hexlet.io/programs/python-playwright
+## Sonar
+
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=coverage)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Maintainability issues](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=software_quality_maintainability_issues)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Reliability issues](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=software_quality_reliability_issues)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Security issues](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=software_quality_security_issues)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=yannay000_python-playwright-project-440&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=yannay000_python-playwright-project-440)
 
 
 ## Стек
@@ -24,7 +36,6 @@ make test
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
 
 ---
 
@@ -34,7 +45,3 @@ make test
 Тесты запускаются на каждый коммит. За запуск отвечает файл `.github/workflows/hexlet-check.yml` — не удаляйте и не переименовывайте ни его, ни репозиторий.
 
 </details>
-
-## О Хекслете
-
-[Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
