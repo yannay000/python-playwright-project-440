@@ -16,7 +16,7 @@ class UserStep:
     @allure.step("Нажать на кнопку пользователей в левом меню")
     def click_users_button(self) -> None:
         self.users_page.users_button().click()
-        expect(self.users_page.user_table()).to_be_visible()
+        expect(self.users_page.table()).to_be_visible()
 
     @allure.step("Нажать на кнопку создания пользователя")
     def click_create_button(self) -> None:
@@ -52,8 +52,8 @@ class UserStep:
 
     @allure.step("Проверить пользователя в таблице")
     def check_user_in_table(self, email: str, first_name: str, last_name: str) -> None:
-        expect(self.users_page.user_row_by_email(email)).to_contain_text(first_name)
-        expect(self.users_page.user_row_by_email(email)).to_contain_text(last_name)
+        expect(self.users_page.table_row_by_field(email)).to_contain_text(first_name)
+        expect(self.users_page.table_row_by_field(email)).to_contain_text(last_name)
 
     def create_user(self) -> tuple[str, str, str]:
         with allure.step("Создание пользователя"):
@@ -69,14 +69,14 @@ class UserStep:
         expect(self.users_page.email_header()).to_be_visible()
         expect(self.users_page.last_name_header()).to_be_visible()
         expect(self.users_page.first_name_header()).to_be_visible()
-        expect(self.users_page.user_row()).to_have_count(9)
+        expect(self.users_page.table_row()).to_have_count(9)
 
     @allure.step("Нажать на первого пользователя")
     def click_first_user(self) -> str:
         email = self.users_page.user_row_email()
         first_name = self.users_page.user_row_first_name()
         last_name = self.users_page.user_row_last_name()
-        self.users_page.user_row().nth(1).click()
+        self.users_page.table_row().nth(1).click()
         expect(self.user_page.user_email_field()).to_have_value(email)
         expect(self.user_page.first_name_field()).to_have_value(first_name)
         expect(self.user_page.last_name_field()).to_have_value(last_name)
@@ -102,9 +102,9 @@ class UserStep:
     @allure.step("Нажать на кнопку удаления")
     def click_delete_button(self, email: str, email_2: str = None) -> None:
         self.user_page.delete_button().click()
-        expect(self.users_page.user_row_by_email(email)).not_to_be_visible()
+        expect(self.users_page.table_row_by_field(email)).not_to_be_visible()
         if email_2:
-            expect(self.users_page.user_row_by_email(email_2)).not_to_be_visible()
+            expect(self.users_page.table_row_by_field(email_2)).not_to_be_visible()
 
     def delete_user(self) -> str:
         with allure.step("Удаление пользователя"):
@@ -114,13 +114,13 @@ class UserStep:
     @allure.step("Нажать на чекбокс первого пользователя")
     def click_first_user_checkbox(self) -> str:
         email = self.users_page.user_row_email(1)
-        self.users_page.user_row_checkbox(1).click()
+        self.users_page.table_row_checkbox(1).click()
         return email
 
     @allure.step("Нажать на чекбокс второго пользователя")
     def click_second_user_checkbox(self) -> str:
         email = self.users_page.user_row_email(2)
-        self.users_page.user_row_checkbox(2).click()
+        self.users_page.table_row_checkbox(2).click()
         return email
 
     def delete_multiple_users(self) -> str:
