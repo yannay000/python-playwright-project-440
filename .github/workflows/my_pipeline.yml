@@ -17,7 +17,7 @@ jobs:
         run: |
           pip install --only-binary :all: uv
           make install
-          uv run playwright install chromium --only-shell
+          make install-playwright
       - name: Run linter
         run: |
           make lint
@@ -33,7 +33,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=yannay000_qa-auto-engineer-python-project-314
+            -Dsonar.projectKey=yannay000_python-playwright-project-440
             -Dsonar.organization=yannay000
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**

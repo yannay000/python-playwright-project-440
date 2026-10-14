@@ -4,6 +4,9 @@ init:
 install:
 	uv sync
 
+install-playwright:
+	uv run --no-build playwright install chromium --only-shell
+
 test:
 	uv run pytest -v -s --headed --slowmo=500
 
