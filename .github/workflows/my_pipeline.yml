@@ -25,6 +25,8 @@ jobs:
         run: |
           make start
       - name: Run test coverage
+        env:
+          APP_BASE_URL: http://localhost:5173
         run: |
           make test-coverage
       - name: SonarQubeScan
