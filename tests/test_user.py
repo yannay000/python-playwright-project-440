@@ -43,7 +43,9 @@ def test_user_edit_successfully(open_main_page: Callable, user_page: UserPage, u
 def test_user_edit_wrong_email(open_main_page: Callable, user_page: UserPage, users_page: UsersPage) -> None:
     user_step = UserStep(user_page, users_page)
     user_step.click_users_button()
-    user_step.edit_user_wrong_email()
+    email, wrong_email = user_step.edit_user_wrong_email()
+    user_step.click_users_button()
+    user_step.check_wrong_email_not_saved(email, wrong_email)
 
 
 def test_user_delete_successfully(open_main_page: Callable, user_page: UserPage, users_page: UsersPage) -> None:

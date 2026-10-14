@@ -19,4 +19,4 @@ lint:
 check: test lint
 
 start:
-	docker run --rm -d -p 5173:5173 hexletprojects/qa_auto_python_testing_kanban_board_project_ru_app
+	docker run --rm -d -p 5173:5173 hexletprojects/qa_auto_python_playwright_kanban_board_project_ru_app

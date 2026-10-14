@@ -46,6 +46,10 @@ class UserStep:
         expect(self.users_page.table_row_by_field(email)).to_contain_text(first_name)
         expect(self.users_page.table_row_by_field(email)).to_contain_text(last_name)
 
+    def check_wrong_email_not_saved(self, email: str, wrong_email: str) -> None:
+        expect(self.users_page.table_row_by_field(wrong_email)).not_to_be_visible()
+        expect(self.users_page.table_row_by_field(email)).to_be_visible()
+
     def create_user(self) -> tuple[str, str, str]:
         self.click_create_button()
         email = self.fill_email()
@@ -79,11 +83,13 @@ class UserStep:
         expect(self.user_page.element_updated()).to_be_visible()
         return email, first_name, last_name
 
-    def edit_user_wrong_email(self) -> None:
-        self.click_first_user()
-        self.fill_email("wrong_email")
+    def edit_user_wrong_email(self) -> tuple[str, str]:
+        email = self.click_first_user()
+        wrong_email = "wrong_email"
+        self.fill_email(wrong_email)
         self.click_save_button_for_edit()
         expect(self.user_page.wrong_email_message()).to_be_visible()
+        return email, wrong_email
 
     def click_delete_button(self, email: str, email_2: str = None) -> None:
         self.user_page.delete_button().click()
