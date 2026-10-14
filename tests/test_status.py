@@ -1,7 +1,6 @@
 # tests/test_status.py
 from typing import Callable
 
-import allure
 import pytest
 from playwright.sync_api import Page
 
@@ -20,9 +19,6 @@ def statuses_page(page: Page) -> StatusesPage:
     return StatusesPage(page)
 
 
-@allure.parent_suite("Status")
-@allure.suite("Create status")
-@allure.title("Create status successfully")
 def test_status_create_successfully(
 	open_main_page: Callable, status_page: StatusPage, statuses_page: StatusesPage
 	) -> None:
@@ -33,9 +29,6 @@ def test_status_create_successfully(
     status_step.check_status_in_table(name, slug)
 
 
-@allure.parent_suite("Status")
-@allure.suite("Get statuses")
-@allure.title("Get statuses successfully")
 def test_status_get_successfully(
 	open_main_page: Callable, status_page: StatusPage, statuses_page: StatusesPage
 	) -> None:
@@ -44,9 +37,6 @@ def test_status_get_successfully(
     status_step.get_statuses()
 
 
-@allure.parent_suite("Status")
-@allure.suite("Edit status")
-@allure.title("Edit status successfully")
 def test_status_edit_successfully(
 	open_main_page: Callable, status_page: StatusPage, statuses_page: StatusesPage
 ) -> None:
@@ -56,9 +46,6 @@ def test_status_edit_successfully(
     status_step.check_status_in_table(name, slug)
 
 
-@allure.parent_suite("Status")
-@allure.suite("Delete statuses")
-@allure.title("Delete status successfully")
 def test_status_delete_successfully(
 	open_main_page: Callable, status_page: StatusPage, statuses_page: StatusesPage
 ) -> None:
@@ -67,9 +54,6 @@ def test_status_delete_successfully(
     status_step.delete_status()
 
 
-@allure.parent_suite("Status")
-@allure.suite("Delete statuses")
-@allure.title("Delete multiple statuses successfully")
 def test_status_delete_multiple_successfully(
 	open_main_page: Callable, status_page: StatusPage, statuses_page: StatusesPage
 ) -> None:

@@ -1,5 +1,4 @@
 # steps/login_step.py
-import allure
 from playwright.sync_api import expect
 
 from pages.header_page import HeaderPage
@@ -12,13 +11,11 @@ class HeaderStep:
         self.login_page = login_page
         self.header_page = header_page
 
-    @allure.step("Открыть главную страницу.")
     def open(self) -> None:
         """Открыть главную страницу."""
         self.header_page.open()
         expect(self.header_page.profile_button()).to_be_visible()
 
-    @allure.step("Выйти из аккаунта.")
     def logout(self) -> None:
         """Выйти из аккаунта."""
         self.header_page.profile_button().click()

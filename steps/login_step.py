@@ -1,5 +1,4 @@
 # steps/login_step.py
-import allure
 from playwright.sync_api import expect
 
 from config import LOGIN, PASSWORD
@@ -13,12 +12,10 @@ class LoginStep:
         self.login_page = login_page
         self.header_page = header_page
 
-    @allure.step("Открыть страницу логина.")
     def open(self) -> None:
         """Открыть страницу логина."""
         self.login_page.open()
 
-    @allure.step("Логин.")
     def login(self) -> None:
         """Логин."""
         self.login_page.username_field().fill(LOGIN)

@@ -172,5 +172,4 @@ cython_debug/
 trash
 .DS_Store
 **/.DS_Store
-allure-results
 .auth
