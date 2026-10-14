@@ -86,7 +86,7 @@ class TaskStep:
         expect(self.tasks_page.tasks()).to_have_count(15)
 
     def filter_tasks_by_assignee(self) -> None:
-        assignee = self.fill_assignee(6)
+        assignee = self.fill_assignee(8)
         tasks_list = self.get_tasks_list()
         self.check_tasks_by_assignee(tasks_list, assignee)
 
